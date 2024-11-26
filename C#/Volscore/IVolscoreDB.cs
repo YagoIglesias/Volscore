@@ -20,6 +20,7 @@ namespace VolScore
             public string Category;             //!< Catégorie: Homme, Femme, Mixte
             public string League;               //!< Ligue: U19, M4, F2, ...
             public int ReceivingTeamId;         //!< Numéro de l'équipe recevante
+            public DateTime gameSchedule;       //!< Horaire du match
             public string ReceivingTeamName;    //!< Nom de l'équipe recevante
             public int ScoreReceiving;          //!< Le nombre de sets gagnés par l'équipe recevante
             public int VisitingTeamId;          //!< Numéro de l'équipe visiteuse
@@ -29,7 +30,7 @@ namespace VolScore
             public string Venue;                //!< Nom de la salle de sport
             public DateTime Moment;             //!< Date et heure du début du match
 
-            public Game(int number, string type, string level, string category, string league, int receivingTeamId, string receivingTeamName, int visitingTeamId, string visitingTeamName, string place, string venue, DateTime moment)
+            public Game(int number, string type, string level, string category, string league, int receivingTeamId, DateTime gameSchedule, string receivingTeamName, int visitingTeamId, string visitingTeamName, string place, string venue, DateTime moment)
             {
                 Number = number;
                 Type = type;
@@ -37,6 +38,7 @@ namespace VolScore
                 Category = category;
                 League = league;
                 ReceivingTeamId = receivingTeamId;
+                GameSchedule = gameSchedule;
                 ReceivingTeamName = receivingTeamName;
                 ScoreReceiving = 0;
                 VisitingTeamId = visitingTeamId;
