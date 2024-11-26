@@ -1,71 +1,161 @@
-header, footer {
-    background: linear-gradient(0.25turn, #6aa619, #a7f89f, #1eb35c);
+/* Styles communs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    min-height: 100vh; /* Garantit que le corps prend au moins la hauteur de la fenêtre */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Disposition en colonne pour pousser le footer vers le bas */
+}
+
+
+
+
+
+header {
+    background: linear-gradient(0.25turn, #4e9b1b, #8cff82, #1eb35c); /* Un dégradé plus doux et équilibré */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+}
+
+/* Style du footer pour qu'il reste en bas */
+footer {
+    background: linear-gradient(0.25turn, #4e9b1b, #8cff82, #1eb35c);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+h1, h2 {
+    font-size: 2rem; /* Taille de police plus adaptée pour les titres */
+    margin-bottom: 10px;
 }
 
 td, th {
     vertical-align: top;
     padding-left: 20px;
+    padding-right: 20px; /* Ajout d'espacement à droite pour plus de confort visuel */
+    text-align: left; /* Améliore la lisibilité des tableaux */
+}
+
+.main {
+    flex: 1; /* Prend tout l'espace disponible, forçant le footer à rester en bas */
 }
 
 .score {
-    font-size: 150px;
-    font-weight: bolder;
+    font-size: 8rem; /* Utilisation de rem pour la réactivité */
+    font-weight: 900;
     text-align: center;
     height: 230px;
+    color: #333; /* Couleur de texte plus neutre */
 }
 
 .setscore {
     text-align: center;
+    font-size: 1.25rem;
+    color: #666; /* Couleur plus douce pour les sous-titres */
 }
 
 .teamname {
-    font-size: 50px;
-    width: 300px;
+    font-size: 3rem; /* Taille ajustée pour une meilleure hiérarchie */
+    width: 80%; /* Plus flexible pour l'adaptation mobile */
+    max-width: 300px;
+    margin: 0 auto;
     text-align: center;
+    color: #1a1a1a;
 }
 
 .actions {
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Thanks http://jsfiddle.net/mirohristov/awayF/473/ */
+/* Checkmark */
 .checkmark {
-    display:inline-block;
-    width: 22px;
-    height:22px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     background: #38d917;
-    border-radius:50%;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    border-radius: 50%;
     transform: rotate(45deg);
+    position: relative;
+    margin-top: 5px;
 }
 
-.checkmark:before{
-    content:"";
+.checkmark:before, .checkmark:after {
+    content: "";
     position: absolute;
-    width:3px;
-    height:9px;
-    background-color:#fff;
-    left:11px;
-    top:6px;
+    background-color: #fff;
+    transition: all 0.2s ease; /* Transition douce pour l'interaction */
 }
 
-.checkmark:after{
-    content:"";
-    position: absolute;
-    width:3px;
-    height:3px;
-    background-color:#fff;
-    left:8px;
-    top:12px;
+.checkmark:before {
+    width: 4px;
+    height: 12px;
+    top: 5px;
+    left: 10px;
 }
 
+.checkmark:after {
+    width: 4px;
+    height: 4px;
+    top: 12px;
+    left: 9px;
+}
+
+/* .serving */
 .serving {
-    background-color: orange;
+    background-color: #ff9f00; /* Orange plus doux */
     border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
 }
 
+.serving:hover {
+    background-color: #ff7f00; /* Effet visuel au survol */
+    cursor: pointer;
+}
+
+/* Responsivité et accessibilité */
 .teamPrep {
-    width: 30%;
+    width: 100%;
+    max-width: 350px;
     text-align: center;
+    margin: 20px auto;
+    font-size: 1.25rem; /* Adaptation aux petits écrans */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .score {
+        font-size: 6rem; /* Taille réduite sur mobile */
+    }
+    .teamname {
+        font-size: 2.5rem; /* Ajustement de la taille des noms de l'équipe */
+    }
+    .teamPrep {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .score {
+        font-size: 5rem; /* Taille plus petite sur très petits écrans */
+    }
+    .teamname {
+        font-size: 2rem; /* Taille encore réduite pour les petits écrans */
+    }
 }
