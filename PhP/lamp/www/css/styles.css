@@ -1,3 +1,16 @@
+/* Variables globales */
+:root {
+    --color-primary: #4e9b1b;
+    --color-primary-light: #8cff82;
+    --color-primary-dark: #1eb35c;
+    --color-secondary: #ff9f00;
+    --color-secondary-hover: #ff7f00;
+    --color-neutral-dark: #333;
+    --color-neutral-light: #666;
+    --box-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --font-base: 'Arial', sans-serif;
+}
+
 /* Styles communs */
 * {
     margin: 0;
@@ -7,76 +20,120 @@
 
 body {
     height: 100%;
-    min-height: 100vh; /* Garantit que le corps prend au moins la hauteur de la fenêtre */
+    min-height: 100vh;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Disposition en colonne pour pousser le footer vers le bas */
+    flex-direction: column;
+    font-family: var(--font-base);
+    color: var(--color-neutral-dark);
+    background-color: #f9f9f9;
+    line-height: 1.6;
 }
-
-
-
-
 
 header {
-    background: linear-gradient(0.25turn, #4e9b1b, #8cff82, #1eb35c); /* Un dégradé plus doux et équilibré */
+    background: linear-gradient(0.25turn, var(--color-primary), var(--color-primary-light), var(--color-primary-dark));
     padding: 20px;
     color: white;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    box-shadow: var(--box-shadow-light);
 }
 
-/* Style du footer pour qu'il reste en bas */
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #e0ffe0;
+}
+
+/* Footer */
 footer {
-    background: linear-gradient(0.25turn, #4e9b1b, #8cff82, #1eb35c);
+    background: linear-gradient(0.25turn, var(--color-primary), var(--color-primary-light), var(--color-primary-dark));
     padding: 20px;
     color: white;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Pousse le footer vers le bas */
+    box-shadow: var(--box-shadow-light);
+    margin-top: auto;
+    font-size: 0.9rem;
 }
 
+/* Titres */
 h1, h2 {
-    font-size: 2rem; /* Taille de police plus adaptée pour les titres */
+    font-size: 2rem;
     margin-bottom: 10px;
+    color: var(--color-primary-dark);
 }
 
+/* Tableaux */
 td, th {
     vertical-align: top;
-    padding-left: 20px;
-    padding-right: 20px; /* Ajout d'espacement à droite pour plus de confort visuel */
-    text-align: left; /* Améliore la lisibilité des tableaux */
+    padding: 10px 20px;
+    text-align: left;
 }
 
+/* Section principale */
 .main {
-    flex: 1; /* Prend tout l'espace disponible, forçant le footer à rester en bas */
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    box-shadow: var(--box-shadow-light);
+    border-radius: 8px;
+    margin: 20px;
 }
 
 .score {
-    font-size: 8rem; /* Utilisation de rem pour la réactivité */
+    font-size: 8rem;
     font-weight: 900;
     text-align: center;
     height: 230px;
-    color: #333; /* Couleur de texte plus neutre */
+    color: var(--color-neutral-dark);
 }
 
 .setscore {
     text-align: center;
     font-size: 1.25rem;
-    color: #666; /* Couleur plus douce pour les sous-titres */
+    color: var(--color-neutral-light);
 }
 
 .teamname {
-    font-size: 3rem; /* Taille ajustée pour une meilleure hiérarchie */
-    width: 80%; /* Plus flexible pour l'adaptation mobile */
+    font-size: 3rem;
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
-    color: #1a1a1a;
+    color: var(--color-neutral-dark);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
 }
 
 .actions {
     text-align: center;
     margin-top: 20px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.actions button:hover {
+    background-color: var(--color-secondary-hover);
+    transform: scale(1.05);
+}
+
+.actions button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 /* Checkmark */
@@ -91,11 +148,12 @@ td, th {
     margin-top: 5px;
 }
 
-.checkmark:before, .checkmark:after {
+.checkmark:before,
+.checkmark:after {
     content: "";
     position: absolute;
     background-color: #fff;
-    transition: all 0.2s ease; /* Transition douce pour l'interaction */
+    transition: all 0.2s ease;
 }
 
 .checkmark:before {
@@ -114,48 +172,55 @@ td, th {
 
 /* .serving */
 .serving {
-    background-color: #ff9f00; /* Orange plus doux */
+    background-color: var(--color-secondary);
     border-radius: 5px;
     color: white;
     padding: 10px 15px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
+    box-shadow: var(--box-shadow-light);
+    transition: background-color 0.3s, box-shadow 0.2s;
 }
 
 .serving:hover {
-    background-color: #ff7f00; /* Effet visuel au survol */
+    background-color: var(--color-secondary-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
-/* Responsivité et accessibilité */
+/* Responsivité */
 .teamPrep {
     width: 100%;
     max-width: 350px;
     text-align: center;
     margin: 20px auto;
-    font-size: 1.25rem; /* Adaptation aux petits écrans */
+    font-size: 1.25rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .score {
-        font-size: 6rem; /* Taille réduite sur mobile */
+        font-size: 6rem;
     }
     .teamname {
-        font-size: 2.5rem; /* Ajustement de la taille des noms de l'équipe */
-    }
-    .teamPrep {
-        width: 80%;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .score {
-        font-size: 5rem; /* Taille plus petite sur très petits écrans */
+        font-size: 5rem;
     }
     .teamname {
-        font-size: 2rem; /* Taille encore réduite pour les petits écrans */
+        font-size: 2rem;
     }
+}
+
+/* Conteneur personnalisé */
+.custom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
 }

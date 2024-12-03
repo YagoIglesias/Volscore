@@ -2,7 +2,7 @@
 $title = 'Accueil';
 ob_start();
 ?>
-<div class="row">
+<div class="custom-container">
     <div class="col-6">
         <a href="?action=teams">
             <h1>Equipes</h1>
