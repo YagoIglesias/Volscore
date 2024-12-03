@@ -333,7 +333,7 @@ class VolscoreDB implements IVolscoreDb {
         try
         {
             $dbh = self::connexionDB();
-            $query = "SELECT members.id,members.first_name,members.last_name,members.role,members.license,players.id as playerid, players.number,players.validated ".
+            $query = "SELECT members.id,members.first_name,members.last_name,members.role,members.license,members.photo,players.id as playerid, players.number,players.validated ".
                     "FROM players INNER JOIN members ON member_id = members.id ". 
                     "WHERE game_id = $gameid AND members.team_id = $teamid";
             $statement = $dbh->prepare($query); // Prepare query    

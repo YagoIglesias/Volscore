@@ -1,6 +1,8 @@
 <?php
 $title = 'Préparation du match '.$game->number;
-
+/*echo "<pre>";
+var_dump($receivingRoster);
+echo "</pre>";*/
 ob_start();
 ?>
 
@@ -13,7 +15,11 @@ ob_start();
             <td>
                 <table>
                     <?php foreach ($receivingRoster as $player) : ?>
-                        <tr><td><?= $player->last_name ?></td><td><?= $player->license ?></td><td><?= $player->number ?></td></tr>
+                        
+                        <tr><td><?= $player->last_name ?></td><td><?= $player->license ?></td><td><?= $player->number ?></td>
+                        
+                        <td><img id="avatar" src="../images/<?=$player->photo?>" alt="img player"></td></tr>
+                        
                     <?php endforeach; ?>
                 </table>
                 <?php if (rosterIsValid($receivingRoster)) : ?>
@@ -27,7 +33,7 @@ ob_start();
             <td>
                 <table>
                     <?php foreach ($visitingRoster as $player) : ?>
-                        <tr><td><?= $player->last_name ?></td><td><?= $player->license ?></td><td><?= $player->number ?></td></tr>
+                        <tr><td><?= $player->last_name ?></td><td><?= $player->license ?></td><td><?= $player->number ?></td>
                     <?php endforeach; ?>
                 </table>
                 <?php if (rosterIsValid($visitingRoster)) : ?>
