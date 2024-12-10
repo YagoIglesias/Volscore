@@ -122,7 +122,7 @@ INSERT INTO `members` VALUES (1,1,'C','Gavin','Franks',91453,1,NULL,'volleyball-
 (41,3,'J','Honorato','Guerrero',45989,9,NULL,'volleyball-player.jpg'),
 (42,1,'J','Coby','Bell',46277,5,NULL,'volleyball-player.jpg'),
 (43,5,'J','Kane','Drake',53072,9,NULL,'volleyball-player.jpg'),
-(44,5,'J','Vaughan','Faulkner',27102,13,NULL,'image/volleyball-player.jpg'),
+(44,5,'J','Vaughan','Faulkner',27102,13,NULL,'volleyball-player.jpg'),
 (45,2,'J','Erich','Sykes',33688,3,NULL,'volleyball-player.jpg'),
 (46,2,'J','Adam','Davis',15896,11,NULL,'volleyball-player.jpg'),
 (47,3,'J','Byron','Knox',16190,13,NULL,'volleyball-player.jpg'),

@@ -69,3 +69,51 @@ td, th {
     width: 30%;
     text-align: center;
 }
+
+#avatar {
+    width: 30px;
+}
+
+
+
+/***************************/
+
+
+/* Image dans le tableau */
+.clickable-image {
+    width: 30px;
+    cursor: pointer;
+}
+  
+/* Style du Pop-up */
+.popup {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+  
+.popup-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+  
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+  
+.close-btn:hover {
+    color: red;
+}
