@@ -8,5 +8,6 @@ class Member extends Model {
     public $license;                //!< Numéro de license
     public $number;                 //!< Numéro sur le maillot
     public $libero;                 //!< Joue au poste de libéro oui/non
+    public $photo;                  //!< Photo du joueur (stocque via le chemin via la db) 
     public $team_id;                //!< Le numéro de son équipe
 }
